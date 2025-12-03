@@ -1,0 +1,51 @@
+openapi: 3.0.3
+info:
+  version: '1.0'
+  title: Bug and Fix
+  description: Система сбора багов и их решений
+servers:
+  - url: http://localhost:12001
+tags:
+  - name: Bug
+    description: Методы работы с багами
+paths:
+  /api/v1/bug/{id}:
+    get:
+      summary: Получить данные бага
+      operationId: getBugById
+      tags:
+        - Bug
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Баг успешно получен
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Bug"
+        "404":
+          description: Баг не найден
+
+components:
+  schemas:
+    Bug:
+      type: object
+      required:
+        - id
+        - title
+        - description
+      properties:
+        id: 
+          type: integer
+        title:
+          type: string
+        description:
+          type: string
+        solution:
+          type: string
+          nullable: true
