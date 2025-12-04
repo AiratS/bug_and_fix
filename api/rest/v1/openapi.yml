@@ -39,12 +39,24 @@ components:
         - id
         - title
         - description
+        - project
+        - device
+        - env
       properties:
         id: 
           type: integer
         title:
           type: string
         description:
+          type: string
+        project:
+          type: string
+        errorMessage:
+          type: string
+          nullable: true
+        device:
+          type: string
+        env:
           type: string
         solution:
           type: string

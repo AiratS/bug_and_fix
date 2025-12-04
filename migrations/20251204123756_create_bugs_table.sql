@@ -7,7 +7,8 @@ CREATE TABLE bugs (
     project VARCHAR(255) NOT NULL,
     error_message TEXT,
     device VARCHAR(127) NOT NULL,
-    env INTEGER NOT NULL
+    env INTEGER NOT NULL,
+    solution TEXT
 );
 -- +goose StatementEnd
 

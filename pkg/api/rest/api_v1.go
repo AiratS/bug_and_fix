@@ -16,10 +16,14 @@ import (
 
 // Bug defines model for Bug.
 type Bug struct {
-	Description string  `json:"description"`
-	Id          int     `json:"id"`
-	Solution    *string `json:"solution"`
-	Title       string  `json:"title"`
+	Description  string  `json:"description"`
+	Device       string  `json:"device"`
+	Env          string  `json:"env"`
+	ErrorMessage *string `json:"errorMessage"`
+	Id           int     `json:"id"`
+	Project      string  `json:"project"`
+	Solution     *string `json:"solution"`
+	Title        string  `json:"title"`
 }
 
 // ServerInterface represents all server handlers.
