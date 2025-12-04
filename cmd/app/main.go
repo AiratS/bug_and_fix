@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"github.com/airats/bug_and_fix/internal/app"
+)
 
 func main() {
-	fmt.Println("hello world")
+	app.Run()
 }
