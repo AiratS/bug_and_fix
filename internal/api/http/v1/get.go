@@ -7,12 +7,17 @@ import (
 )
 
 func (s *BugAndFixV1) GetBugById(ctx context.Context, request api_v1.GetBugByIdRequestObject) (api_v1.GetBugByIdResponseObject, error) {
-	bug := api_v1.Bug{
-		Id:          12,
-		Title:       "Some bug",
-		Description: "Some desc",
+	bug, err := s.bugAndFixService.GetBugById(request.Id)
+	if err != nil {
+		return api_v1.GetBugById404Response{}, nil
+	}
+
+	respBug := api_v1.Bug{
+		Id:          bug.ID,
+		Title:       bug.Title,
+		Description: bug.Description,
 		Solution:    nil,
 	}
 
-	return api_v1.GetBugById200JSONResponse(bug), nil
+	return api_v1.GetBugById200JSONResponse(respBug), nil
 }
