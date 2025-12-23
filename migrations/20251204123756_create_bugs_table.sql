@@ -8,7 +8,9 @@ CREATE TABLE bugs (
     error_message TEXT,
     device VARCHAR(127) NOT NULL,
     env INTEGER NOT NULL,
-    solution TEXT
+    solution TEXT,
+    created_at TIMESTAMPTZ NOT NULL,
+    solved_at TIMESTAMPTZ
 );
 -- +goose StatementEnd
 
